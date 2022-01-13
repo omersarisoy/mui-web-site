@@ -116,7 +116,7 @@ const Footer = (props) => {
               onClick={() => {props.setValue(1); props.setSelectedIndex(2)}}
               className={classes.link}
             >
-              Mobile App Development
+              IOS/Android App Development
             </Grid>
             <Grid
               item
