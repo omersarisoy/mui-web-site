@@ -40,7 +40,7 @@ function App() {
             path="/contact"
             component={() => <div>Contact Us</div>}
           />
-          <Route exact path="/estiamte" component={() => <div>Estimate</div>} />
+          <Route exact path="/estimate" component={() => <div>Estimate</div>} />
         </Switch>
         <Footer value={value} setValue={setValue} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/>
       </BrowserRouter>

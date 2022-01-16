@@ -83,8 +83,8 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 25,
     height: 45,
     "&:hover": {
-      backgroundColor:theme.palette.secondary.light
-    }
+      backgroundColor: theme.palette.secondary.light,
+    },
   },
 
   menu: {
@@ -130,13 +130,13 @@ const useStyles = makeStyles((theme) => ({
 
   drawerItemSelected: {
     "& .MuiListItemText-root": {
-      opacity: 1
-    }
+      opacity: 1,
+    },
   },
 
   appbar: {
-    zIndex:theme.zIndex.modal + 1
-  }
+    zIndex: theme.zIndex.modal + 1,
+  },
 }));
 
 export default function Header(props) {
@@ -216,10 +216,16 @@ export default function Header(props) {
         case `${route.link}`:
           if (props.value !== route.activeIndex) {
             props.setValue(route.activeIndex);
-            if (route.selectedIndex && route.selectedIndex !== props.selectedIndex) {
+            if (
+              route.selectedIndex &&
+              route.selectedIndex !== props.selectedIndex
+            ) {
               props.setSelectedIndex(route.selectedIndex);
             }
           }
+          break;
+        case "/estimate":
+          props.setValue(5);
           break;
         default:
           break;
@@ -237,7 +243,7 @@ export default function Header(props) {
       >
         {routes.map((route, index) => (
           <Tab
-            key={`${route} ${index}` }
+            key={`${route} ${index}`}
             className={classes.tab}
             component={Link}
             to={route.link}
@@ -248,7 +254,14 @@ export default function Header(props) {
           />
         ))}
       </Tabs>
-      <Button variant="contained" color="secondary" className={classes.button}>
+      <Button
+        component={Link}
+        to="/estimate"
+        variant="contained"
+        color="secondary"
+        className={classes.button}
+        onClick={() => props.setValue(5)}
+      >
         Free Estimate
       </Button>
       <Menu
@@ -259,7 +272,7 @@ export default function Header(props) {
         classes={{ paper: classes.menu }}
         MenuListProps={{ onMouseLeave: handleClose }}
         elevation={0}
-        style={{zIndex:1302 }}
+        style={{ zIndex: 1302 }}
         keepMounted
       >
         {menuOptions.map((option, i) => (
@@ -291,28 +304,24 @@ export default function Header(props) {
         onOpen={() => setOpenDrawer(true)}
         classes={{ paper: classes.drawer }}
       >
-      <div className={classes.toolbarMargin} />
+        <div className={classes.toolbarMargin} />
 
         <List disablePadding>
           {routes.map((route) => (
             <ListItem
-            key={`${route} ${route.activeIndex}` }
-
+              key={`${route} ${route.activeIndex}`}
               divider
               button
               component={Link}
               to={route.link}
               selected={props.value === route.activeIndex}
-              classes={{selected: classes.drawerItemSelected}}
+              classes={{ selected: classes.drawerItemSelected }}
               onClick={() => {
                 setOpenDrawer(false);
                 props.setValue(route.activeIndex);
               }}
             >
-              <ListItemText
-                className={classes.drawerItem}
-                disableTypography
-              >
+              <ListItemText className={classes.drawerItem} disableTypography>
                 {route.name}
               </ListItemText>
             </ListItem>
@@ -326,13 +335,13 @@ export default function Header(props) {
             button
             component={Link}
             to="/estimate"
-            classes={{root: classes.drawerItemEstimate, selected: classes.drawerItemSelected}}
+            classes={{
+              root: classes.drawerItemEstimate,
+              selected: classes.drawerItemSelected,
+            }}
             selected={props.value === 5}
           >
-            <ListItemText
-              className={classes.drawerItem}
-              disableTypography
-            >
+            <ListItemText className={classes.drawerItem} disableTypography>
               Free Estimate
             </ListItemText>
           </ListItem>
