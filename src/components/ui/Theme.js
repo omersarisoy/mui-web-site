@@ -1,85 +1,86 @@
-import { createTheme } from "@material-ui/core"
+import { createTheme } from "@material-ui/core";
 
+const arcBlue = "#0B72B9";
+const arcOrange = "#FFBA60";
+const arcGrey = "#868686";
 
-const arcBlue = "#0B72B9"
-const arcOrange = "#FFBA60"
-const arcGrey = "#868686"
-
-
-export default createTheme ({
-    palette: {
-        common: {
-            blue: arcBlue,
-            orange: arcOrange,
-        },
-
-        primary: {
-            main: arcBlue,
-        },
-
-        secondary:{
-            main : arcOrange
-        }
+export default createTheme({
+  palette: {
+    common: {
+      blue: arcBlue,
+      orange: arcOrange,
     },
 
-    typography: {
-        tab:{
-            fontFamily:"Raleway",
-            textTransform:"none",
-            fontWeight:700,
-            fontSize:"1rem",
-        },
-        
-        estimate: {
-            fontFamily:"Pacifico",
-            fontSize:"1rem",
-            textTransform:"none",
-            color:"white"  
-        },
+    primary: {
+      main: arcBlue,
+    },
 
-        h2:{
-            fontFamily:"Raleway",
-            fontWeight:700,
-            fontSize:"2.5rem",
-            color: arcBlue,
-            lineHeight:"1.5"
-        },
+    secondary: {
+      main: arcOrange,
+    },
+  },
 
-        h3:{
-            fontFamily:"Pacifico",
-            fontSize:"2.5rem",
-            color: arcBlue,
-        },
+  typography: {
+    tab: {
+      fontFamily: "Raleway",
+      textTransform: "none",
+      fontWeight: 700,
+      fontSize: "1rem",
+    },
 
-        h4:{
-            fontFamily:"Raleway",
-            fontSize:"1.75rem",
-            color: arcBlue,
-            fontWeight:700,
-        },
+    estimate: {
+      fontFamily: "Pacifico",
+      fontSize: "1rem",
+      textTransform: "none",
+      color: "white",
+    },
 
-        subtitle1: {
-            fontSize:"1.25rem",
-            fontWeight: 300,
-            color: arcGrey,
-        },
+    h2: {
+      fontFamily: "Raleway",
+      fontWeight: 700,
+      fontSize: "2.5rem",
+      color: arcBlue,
+      lineHeight: "1.5",
+    },
 
-        subtitle2: {
-            color: "white",
-            fontSize:"1.25rem",
-            fontWeight: 300,
-        },
+    h3: {
+      fontFamily: "Pacifico",
+      fontSize: "2.5rem",
+      color: arcBlue,
+    },
 
-        learnButton: {
-            borderColor: arcBlue,
-            borderWidth: 2,
-            textTransform:"none",
-            color:arcBlue,
-            borderRadius:50,
-            fontFamily:"Roboto",
+    h4: {
+      fontFamily: "Raleway",
+      fontSize: "1.75rem",
+      color: arcBlue,
+      fontWeight: 700,
+    },
 
-        }
+    subtitle1: {
+      fontSize: "1.25rem",
+      fontWeight: 300,
+      color: arcGrey,
+    },
 
-    }
+    subtitle2: {
+      color: "white",
+      fontSize: "1.25rem",
+      fontWeight: 300,
+    },
 
-})
+    body1: {
+      fontSize: "1.25rem",
+      color: arcGrey,
+      fontWeight: 300,
+    },
+
+    learnButton: {
+      borderColor: arcBlue,
+      borderWidth: 2,
+      textTransform: "none",
+      color: arcBlue,
+      borderRadius: 50,
+      fontFamily: "Roboto",
+    },
+  },
+});
