@@ -8,6 +8,9 @@ import Services from "./Services";
 import CustomSoftware from "./CustomSoftware";
 import Websites from "./Websites";
 import MobileApps from "./MobileApps";
+import Revolution from "./Revolution";
+import About from "./About";
+import Contact from "./Contact";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -82,13 +85,35 @@ function App() {
           <Route
             exact
             path="/revolution"
-            component={() => <div>The Revolution</div>}
+            render={(props) => (
+              <Revolution
+                {...props}
+                setValue={setValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
           />
-          <Route exact path="/about" component={() => <div>About Us</div>} />
+          <Route
+            exact
+            path="/about"
+            render={(props) => (
+              <About
+                {...props}
+                setValue={setValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
+          />
           <Route
             exact
             path="/contact"
-            component={() => <div>Contact Us</div>}
+            render={(props) => (
+              <Contact
+                {...props}
+                setValue={setValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
           />
           <Route exact path="/estimate" component={() => <div>Estimate</div>} />
         </Switch>
