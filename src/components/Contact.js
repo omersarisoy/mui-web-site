@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { Link } from "react-router-dom";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -136,38 +136,38 @@ export default function Contact(props) {
     }
   };
 
-  const onConfirm = () => {
-    setLoading(true);
+  // const onConfirm = () => {
+  //   setLoading(true);
 
-    axios
-      .get(
-        "https://us-central1-material-ui-course.cloudfunctions.net/sendMail",
-        {
-          params: {
-            email: email,
-            name: name,
-            phone: phone,
-            message: message
-          }
-        }
-      )
-      .then(res => {
-        setLoading(false);
-        setOpen(false);
-        setName("");
-        setEmail("");
-        setPhone("");
-        setMessage("");
-        setAlert({ open: true, color: "#4BB543" });
-        setAlertMesssage("Message sent successfully!");
-      })
-      .catch(err => {
-        setLoading(false);
-        setAlert({ open: true, color: "#FF3232" });
-        setAlertMesssage("Something went wrong! Please try again.");
-        console.error(err);
-      });
-  };
+  //   axios
+  //     .get(
+  //       "https://us-central1-material-ui-course.cloudfunctions.net/sendMail",
+  //       {
+  //         params: {
+  //           email: email,
+  //           name: name,
+  //           phone: phone,
+  //           message: message
+  //         }
+  //       }
+  //     )
+  //     .then(res => {
+  //       setLoading(false);
+  //       setOpen(false);
+  //       setName("");
+  //       setEmail("");
+  //       setPhone("");
+  //       setMessage("");
+  //       setAlert({ open: true, color: "#4BB543" });
+  //       setAlertMesssage("Message sent successfully!");
+  //     })
+  //     .catch(err => {
+  //       setLoading(false);
+  //       setAlert({ open: true, color: "#FF3232" });
+  //       setAlertMesssage("Something went wrong! Please try again.");
+  //       console.error(err);
+  //     });
+  // };
 
   const buttonContents = (
     <React.Fragment>
@@ -419,7 +419,7 @@ export default function Contact(props) {
                 }
                 variant="contained"
                 className={classes.sendButton}
-                onClick={onConfirm}
+                // onClick={onConfirm}
               >
                 {loading ? <CircularProgress size={30} /> : buttonContents}
               </Button>
